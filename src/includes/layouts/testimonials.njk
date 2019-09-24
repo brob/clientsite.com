@@ -1,0 +1,26 @@
+{% extends "layouts/simple.njk" %}
+
+{% block postContent %}
+
+    <div class="row ml-4 mr-4 sp">
+
+        <div class="testimonial-slider bordered">
+            {% for testimonial in collections.testimonials %}
+                <div class="single-slide">
+                    <div class="inner">
+                        <p>{{ testimonial.data.quote }}</p>
+                        <div class="client-info">
+                            <div class="client-img">
+                                <img src="{{ testimonial.data.headshot }}" alt="client">
+                            </div>
+                            <div class="client-data">
+                                <h4>{{ testimonial.data.name }}</h4>
+                                <span>{{ testimonial.data.jobTitle }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock postContent %}

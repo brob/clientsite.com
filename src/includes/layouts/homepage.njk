@@ -1,0 +1,119 @@
+{% extends "base.njk" %}
+
+{% block pageHeader %}{% endblock pageHeader %}
+
+{% block content %}
+ 
+
+           <div class="hero-slider">
+            
+            {% for banner in banners %}
+
+            <div class="single-slide" style="background-image: url({{ banner.background }})">
+                <div class="inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slide-content">
+                                    <h2>{{ banner.headline }}</h2>
+                                    <p>{{ banner.blurb }}</p>
+                                    <div class="slide-btn">
+                                        <a href="{{ banner.link.url }}" class="button">{{ banner.link.text }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}     
+           
+        </div>    
+        
+        
+           <div class="about-area sp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-content">
+                    <h3>{{ about.title }}</h3>
+                    <p>{{ about.description }}</p>
+                    <a href="{{ about.link.url }}" class="button">{{ about.link.text }}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about-img">
+                    <img src="{{ about.image }}" alt="{{ about.title }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>      <div class="service-area spt">
+    <div class="container">
+        <div class="section-title" data-margin="0 0 40px">
+            <h2>{{ services.title }}</h2>
+            <p>{{ services.description}}</p>
+        </div>
+        <div class="row">
+        {% for service in collections.services %}
+            <div class="col-md-4 single-service-2">
+                <div class="inner">
+                    <div class="title">
+                        <div class="icon">
+                            <i class="fa fa-{{ service.data.faIcon }}"></i>
+                        </div>
+                        <h4>{{ service.data.title }}</h4>
+                    </div>
+                    <div class="content">
+                        <p>{{ service.data.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>     <div class="brand-area">
+    <div class="container">
+        <div class="row">
+        {% for brand in collections.brands %}
+            <div class="col-md-3 col-6 single-brand">
+                <div class="inner">
+                    <a href="{{ brand.data.url }}">
+                        <img src="{{ brand.data.image }}" alt="{{ brand.data.name }}">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+            
+        </div>
+    </div>
+</div>    <div class="testimonial-area spb">
+    <div class="container">
+        <div class="section-title">
+            <h2>{{ testimonials.title }}</h2>
+            <p>{{ testimonials.description }}</p>
+        </div>
+        <div class="testimonial-slider bordered">
+            {% for testimonial in collections.testimonials %}
+            <div class="single-slide">
+                <div class="inner">
+                    <p>{{ testimonial.data.quote}}</p>
+                    <div class="client-info">
+                        <div class="client-img">
+                            <img src="{{ testimonial.data.headshot }}" alt="client">
+                        </div>
+                        <div class="client-data">
+                            <h4>{{ testimonial.data.name }}</h4>
+                            <span>{{ testimonial.data.jobTitle }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>  
+
+{% endblock content %}
+

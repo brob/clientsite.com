@@ -1,0 +1,15 @@
+{
+    "phone": "(231) 979-3580",
+    "email": "esmeralda_walsh@lucy.name",
+    "address": "30 Heathcote Vista, Cassinfort, LA",
+    "socials": [
+        {
+            "name": "facebook",
+            "url": "http://facebook.com"
+        },
+        {
+            "name": "twitter",
+            "url": "http://twitter.com"
+        }
+    ]
+}
